@@ -1,0 +1,29 @@
+group 'code.kliangh'
+version '0.0.1'
+
+apply plugin: 'java'
+apply plugin: 'jacoco'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'com.google.guava:guava:24.0-jre'
+    compile 'org.apache.commons:commons-lang3:3.7'
+
+    testCompile 'junit:junit:4.12'
+}
+
+jacocoTestReport {
+
+    reports {
+        xml.enabled true
+        html.enabled true
+    }
+}
+test.finalizedBy(project.tasks.jacocoTestReport)
+check.dependsOn jacocoTestReport
