@@ -9,13 +9,11 @@ public class GenerateParenthesesTest {
 
     @Test
     public void getParenthesesCombinationTest() {
-        GenerateParentheses generateParentheses = new GenerateParentheses();
-
-        List<String> result = generateParentheses.getParenthesesCombination(1);
+        List<String> result = GenerateParentheses.getParenthesesCombination(1);
         Assert.assertEquals(1, result.size());
         Assert.assertEquals("()", result.get(0));
 
-        List<String> results = generateParentheses.getParenthesesCombination(3);
+        List<String> results = GenerateParentheses.getParenthesesCombination(3);
         Assert.assertEquals(5, results.size());
     }
 }

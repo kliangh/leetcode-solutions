@@ -4,7 +4,7 @@ import java.util.Objects;
 
 public class SwapNodesInPairs {
 
-    public ListNode swapNodes(ListNode head) {
+    public static ListNode swapNodes(ListNode head) {
         if (Objects.isNull(head)) {
             return null;
         }

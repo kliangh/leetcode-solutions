@@ -3,7 +3,7 @@ package code.kliangh.leetcode.solution;
 import java.util.stream.IntStream;
 
 public class TwoSum {
-    public int[] findTwoSumIndexes(int[] nums, int target) {
+    public static int[] findTwoSumIndexes(int[] nums, int target) {
         for (int i = 0; i < nums.length; i++) {
             int remaining = target - nums[i];
             int indexOfRemaining;

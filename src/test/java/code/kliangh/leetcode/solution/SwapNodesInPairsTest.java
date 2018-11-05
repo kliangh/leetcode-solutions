@@ -25,8 +25,7 @@ public class SwapNodesInPairsTest {
         n4.next = n5;
         n5.next = n6;
 
-        SwapNodesInPairs swapNodesInPairs = new SwapNodesInPairs();
-        ListNode result = swapNodesInPairs.swapNodes(n1);
+        ListNode result = SwapNodesInPairs.swapNodes(n1);
 
         List<Integer> results = new ArrayList<>();
         do {

@@ -5,7 +5,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class GenerateParentheses {
-    public List<String> getParenthesesCombination(int n) {
+    public static List<String> getParenthesesCombination(int n) {
         String parentheses = "()";
         List<String> results;
         List<String> combinations = new ArrayList<>(Collections.singletonList("()"));
