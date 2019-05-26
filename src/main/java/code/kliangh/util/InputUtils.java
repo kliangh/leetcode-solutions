@@ -3,6 +3,8 @@ package code.kliangh.util;
 import org.apache.commons.lang3.StringUtils;
 
 import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.*;
 
 public class InputUtils {
@@ -14,7 +16,20 @@ public class InputUtils {
     }
 
     public static List collectBufferedReaderInputToList(BufferedReader bufferedReader) {
-        return Collections.emptyList();
+        List<String> inputs = new ArrayList<>();
+        String input;
+
+        try (BufferedReader autoCloseableBufferedReader = bufferedReader) {
+            do {
+                input = autoCloseableBufferedReader.readLine();
+                inputs.add(input);
+
+            } while (StringUtils.isNotBlank(input) && !"\r\n".equals(input));
+        } catch (IOException e) {
+            System.out.println();
+        } finally {
+            return inputs;
+        }
     }
 
     public static List collectMainArgsToList(String[] args) {
