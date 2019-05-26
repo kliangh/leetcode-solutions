@@ -9,13 +9,13 @@ import java.util.*;
 
 public class InputUtils {
 
-    public static List collectScannerInputToList(Scanner scanner) {
+    public static List collectScannerInput(Scanner scanner) {
         List<String> inputs = new ArrayList<>();
 
         return retrieveInputsFromScanner(scanner, inputs);
     }
 
-    public static List collectBufferedReaderInputToList(BufferedReader bufferedReader) {
+    public static List collectBufferedReaderInput(BufferedReader bufferedReader) {
         List<String> inputs = new ArrayList<>();
         String input;
 
@@ -32,11 +32,11 @@ public class InputUtils {
         }
     }
 
-    public static List collectMainArgsToList(String[] args) {
+    public static List collectMainArgs(String[] args) {
         return Arrays.asList(args);
     }
 
-    public static List splitStringIntoList(String input, char separator) {
+    public static List splitString(String input, char separator) {
         return Arrays.asList(StringUtils.split(input, separator));
     }
 
