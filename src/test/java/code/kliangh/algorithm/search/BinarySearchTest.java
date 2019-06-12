@@ -33,4 +33,10 @@ public class BinarySearchTest {
                                                                      testData.size(),
                                                                      negativeTestCase));
     }
+
+    @Test
+    public void searchWithLoop() {
+        Assert.assertEquals(3, BinarySearch.searchWithLoop(testData, positiveTestCase));
+        Assert.assertEquals(-1, BinarySearch.searchWithLoop(testData, negativeTestCase));
+    }
 }

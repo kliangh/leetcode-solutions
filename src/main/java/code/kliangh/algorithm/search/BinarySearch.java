@@ -1,5 +1,6 @@
 package code.kliangh.algorithm.search;
 
+import java.util.Arrays;
 import java.util.List;
 
 public class BinarySearch {
@@ -9,7 +10,7 @@ public class BinarySearch {
             return -1;
         }
 
-        int mid = (start + (end - 1)) / 2;
+        int mid = start + (end - start) / 2;
         if (input.get(mid) == target) {
             return mid;
         }
@@ -18,5 +19,25 @@ public class BinarySearch {
                ? searchWithTailRecursion(input, mid + 1, end, target)
                :
                searchWithTailRecursion(input, start, mid - 1, target);
+    }
+
+    public static int searchWithLoop(List<Integer> input, int target) {
+        int start = 0;
+        int end = input.size() - 1;
+
+        while (start <= end) {
+            int mid = start + (end - start) / 2;
+            if (input.get(mid) == target) {
+                return mid;
+            }
+
+            if (input.get(mid) < target) {
+                start = mid + 1;
+            } else {
+                end = mid - 1;
+            }
+        }
+
+        return -1;
     }
 }
